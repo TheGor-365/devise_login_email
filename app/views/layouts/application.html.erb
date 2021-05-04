@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DeviseLoginEmail</title>
+    <title>Devise Login Email</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= toastr_flash %>
+    <%= render 'layouts/nav' %>
+
+    <% if notice.present? %>
+      <div class="container alert alert-success">
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <% if alert.present? %>
+      <div class="container alert alert-danger">
+        <%= alert %>
+      </div>
+    <% end %>
+
+    <div class="container mt-5 mb-5">
+
+      <%= yield %>
+    </div>
   </body>
 </html>
