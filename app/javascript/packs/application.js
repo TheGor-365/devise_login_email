@@ -7,15 +7,15 @@ import "@fortawesome/fontawesome-free/css/all.css"
 import "../stylesheets/application"
 import 'bootstrap'
 
-global.toastr = require("toastr")
+window.jQuery = $;
+window.$ = $;
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip();
   $('[data-toggle="popover"]').popover()
 })
 
-window.jQuery = $;
-window.$ = $;
+global.toastr = require("toastr")
 
 Rails.start()
 Turbolinks.start()

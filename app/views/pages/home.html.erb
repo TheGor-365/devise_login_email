@@ -1,3 +1,4 @@
-<div class="card p-4">
-  <h4>Home</h4>
+<div class="card p-4 shadow-sm">
+  <h6 class="text-muted"><%= current_user.present? ? current_user.email : "User don't signed in, you should signe in" %></h6>
+  <h4 class="text-success"><%= current_user.username if current_user.present? %></h4>
 </div>
